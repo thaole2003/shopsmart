@@ -45,7 +45,6 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/product/{id}', [HomeController::class, 'show'])->name('product.show');
 Route::middleware('auth')->group(function () {
-
     Route::resource('/order',OrderClientController::class);
     Route::resource('/cart',CartController::class);
     Route::resource('/bill',BillController::class);
